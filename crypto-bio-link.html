@@ -1,0 +1,227 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap');
+
+.bio-root {
+  --bg: #EAF2EA;
+  --ink: #1E2B22;
+  --card: #FFFFFF;
+  --gold: #C99A2E;
+  --coral: #E38672;
+  --muted: #5B6B60;
+
+  background: var(--bg);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, sans-serif;
+  min-height: 100%;
+  padding: 36px 16px 48px;
+  display: flex;
+  justify-content: center;
+}
+
+.bio-root * { box-sizing: border-box; }
+
+.bio-root .wrap {
+  width: 100%;
+  max-width: 420px;
+}
+
+.bio-root .header {
+  text-align: center;
+  margin-bottom: 22px;
+  opacity: 0;
+  animation: fadeUp 0.5s ease forwards;
+}
+
+.bio-root .tagline {
+  font-family: 'Quicksand', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 21px;
+  margin-bottom: 8px;
+}
+
+.bio-root .disclosure {
+  font-size: 12.5px;
+  color: var(--muted);
+  max-width: 34ch;
+  margin: 0 auto;
+}
+
+.bio-root .stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bio-root .link-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--card);
+  border-radius: 16px;
+  padding: 13px 16px;
+  text-decoration: none;
+  color: var(--ink);
+  box-shadow: 0 2px 10px rgba(30, 43, 34, 0.09);
+  position: relative;
+  opacity: 0;
+  animation: fadeUp 0.5s ease forwards;
+  transition: transform 0.12s ease;
+}
+
+.bio-root .link-card:active {
+  transform: scale(0.97);
+}
+
+.bio-root .link-card:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.bio-root .stack .link-card:nth-child(1) { animation-delay: 0.08s; }
+.bio-root .stack .link-card:nth-child(2) { animation-delay: 0.13s; }
+.bio-root .stack .link-card:nth-child(3) { animation-delay: 0.18s; }
+.bio-root .stack .link-card:nth-child(4) { animation-delay: 0.23s; }
+.bio-root .stack .link-card:nth-child(5) { animation-delay: 0.28s; }
+.bio-root .stack .link-card:nth-child(6) { animation-delay: 0.33s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bio-root .header, .bio-root .link-card { animation: none; opacity: 1; }
+}
+
+.bio-root .icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(201, 154, 46, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 19px;
+}
+
+.bio-root .text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.bio-root .name {
+  font-family: 'Quicksand', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 15.5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.bio-root .tag {
+  font-family: system-ui, sans-serif;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--coral);
+  border: 1px solid var(--coral);
+  border-radius: 20px;
+  padding: 1px 6px;
+}
+
+.bio-root .desc {
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+.bio-root .arrow {
+  flex-shrink: 0;
+  color: var(--gold);
+  font-size: 17px;
+}
+
+.bio-root .footer {
+  text-align: center;
+  margin-top: 26px;
+  font-size: 12px;
+}
+
+.bio-root .footer a {
+  color: var(--muted);
+  text-decoration: underline;
+}
+</style>
+
+<div class="bio-root">
+  <div class="wrap">
+    <div class="header">
+      <div class="tagline">💸 a few free ways to earn a little crypto</div>
+      <div class="disclosure">referral links below — I may earn a small commission if you sign up, no extra cost to you</div>
+    </div>
+
+    <div class="stack">
+      <a class="link-card" href="https://accounts.binance.com/register?ref=49685937" target="_blank" rel="noopener">
+        <span class="icon">💱</span>
+        <span class="text">
+          <span class="name">Binance</span>
+          <span class="desc">The big one — probably the only exchange you actually need</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+
+      <a class="link-card" href="https://cointiply.com/r/mOnqp" target="_blank" rel="noopener">
+        <span class="icon">🚰</span>
+        <span class="text">
+          <span class="name">Cointiply</span>
+          <span class="desc">One of the more reliable everyday faucets for small, steady rewards</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+
+      <a class="link-card" href="https://freebitco.in/?r=17006348" target="_blank" rel="noopener">
+        <span class="icon">🎲</span>
+        <span class="text">
+          <span class="name">freebitco.in</span>
+          <span class="desc">Free hourly BTC rolls, plus a lo-fi game built in if that's your thing</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+
+      <a class="link-card" href="https://pawns.app/?r=1112465" target="_blank" rel="noopener">
+        <span class="icon">📱</span>
+        <span class="text">
+          <span class="name">Pawns.app</span>
+          <span class="desc">Passive — share some data or knock out surveys in the background</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+
+      <a class="link-card" href="https://rollercoin.com/?r=kcq1472k" target="_blank" rel="noopener">
+        <span class="icon">⛏️</span>
+        <span class="text">
+          <span class="name">RollerCoin</span>
+          <span class="desc">A mining-simulator game that pays real (small) crypto — more fun than a faucet</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+
+      <a class="link-card" href="https://app.codatta.io/referral/a4591r" target="_blank" rel="noopener">
+        <span class="icon">🪙</span>
+        <span class="text">
+          <span class="name">Codatta <span class="tag">NEWER</span></span>
+          <span class="desc">Already has a real listed token — more setup, more upside if it's your kind of bet</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+
+    <div class="footer">
+      want the full list? <a href="faucet-ledger.html">see all 36 →</a>
+    </div>
+  </div>
+</div>

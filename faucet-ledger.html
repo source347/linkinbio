@@ -1,0 +1,336 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+.ledger-root {
+  --ink: #121F1B;
+  --panel: #1A2C26;
+  --panel-line: #2C4038;
+  --paper: #E7E2D2;
+  --paper-dim: #9FB0A7;
+  --brass: #C79A3D;
+  --verdigris: #74AD93;
+  --rust: #C36B4E;
+  --frontier: #A196D6;
+
+  background: var(--ink);
+  color: var(--paper);
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  padding: 40px 20px 56px;
+  line-height: 1.45;
+}
+
+.ledger-root * { box-sizing: border-box; }
+
+.ledger-root .hero {
+  max-width: 780px;
+  margin: 0 auto 48px;
+  text-align: left;
+}
+
+.ledger-root .eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--verdigris);
+  margin-bottom: 14px;
+}
+
+.ledger-root h1 {
+  font-family: 'Zilla Slab', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(32px, 6vw, 52px);
+  line-height: 1.05;
+  margin: 0 0 16px;
+  color: var(--paper);
+}
+
+.ledger-root h1 em {
+  font-style: normal;
+  color: var(--brass);
+}
+
+.ledger-root .thesis {
+  font-size: 16px;
+  color: var(--paper-dim);
+  max-width: 60ch;
+  margin: 0 0 28px;
+}
+
+.ledger-root .tally {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--panel-line);
+  border-bottom: 1px solid var(--panel-line);
+  padding: 18px 0;
+}
+
+.ledger-root .tally-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ledger-root .tally-num {
+  font-family: 'Zilla Slab', Georgia, serif;
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--brass);
+}
+
+.ledger-root .tally-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--paper-dim);
+}
+
+.ledger-root .stratum {
+  max-width: 1080px;
+  margin: 0 auto 44px;
+  opacity: 0;
+  animation: rise 0.6s ease forwards;
+}
+
+.ledger-root .stratum:nth-of-type(1) { animation-delay: 0.05s; }
+.ledger-root .stratum:nth-of-type(2) { animation-delay: 0.15s; }
+.ledger-root .stratum:nth-of-type(3) { animation-delay: 0.25s; }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ledger-root .stratum { animation: none; opacity: 1; }
+}
+
+.ledger-root .stratum-head {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--stratum-accent, var(--verdigris));
+}
+
+.ledger-root .stratum-title {
+  font-family: 'Zilla Slab', Georgia, serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--stratum-accent, var(--verdigris));
+}
+
+.ledger-root .stratum-note {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--paper-dim);
+}
+
+.ledger-root .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+.ledger-root .card {
+  background: var(--panel);
+  border: 1px solid var(--panel-line);
+  border-radius: 3px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ledger-root .card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.ledger-root .card-name {
+  font-family: 'Zilla Slab', Georgia, serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--paper);
+}
+
+.ledger-root .confidence {
+  display: flex;
+  gap: 3px;
+  flex-shrink: 0;
+}
+
+.ledger-root .tick {
+  width: 6px;
+  height: 12px;
+  background: var(--panel-line);
+  border-radius: 1px;
+}
+
+.ledger-root .tick.on {
+  background: var(--brass);
+}
+
+.ledger-root .card-note {
+  font-size: 13px;
+  color: var(--paper-dim);
+  flex-grow: 1;
+}
+
+.ledger-root .card-flag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--rust);
+  border: 1px solid var(--rust);
+  border-radius: 2px;
+  padding: 3px 7px;
+  width: fit-content;
+}
+
+.ledger-root .card-visit {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  color: var(--brass);
+  border: 1px solid var(--brass);
+  border-radius: 2px;
+  padding: 7px 10px;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 4px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.ledger-root .card-visit:hover {
+  background: var(--brass);
+  color: var(--ink);
+}
+
+.ledger-root .card-visit:focus-visible {
+  outline: 2px solid var(--paper);
+  outline-offset: 2px;
+}
+
+.ledger-root footer {
+  max-width: 780px;
+  margin: 40px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--panel-line);
+  font-size: 12px;
+  color: var(--paper-dim);
+}
+
+.ledger-root .stratum[data-key="small"] { --stratum-accent: var(--brass); }
+.ledger-root .stratum[data-key="frontier"] { --stratum-accent: var(--frontier); }
+</style>
+
+<div class="ledger-root">
+  <div class="hero">
+    <div class="eyebrow">Field Notes · Crypto Micro-Earning</div>
+    <h1>The Faucet <em>Ledger</em></h1>
+    <p class="thesis">Thirty-six referral links, sorted honestly by how much I'd trust them — from long-running platforms to speculative pre-token bets. Sign up through any of these and I may earn a small commission, at no extra cost to you.</p>
+    <div class="tally" id="tally"></div>
+  </div>
+  <div id="strata"></div>
+  <footer>
+    Compiled July 2026 from independent research. Confidence ticks reflect my own read on track record, not a guarantee. Do your own homework before relying on any payout — this is one person's honest notes, not financial advice.
+  </footer>
+</div>
+
+<script>
+const DATA = [
+  { key: "bedrock", title: "Bedrock", note: "Established platforms with a real track record", items: [
+    { name: "Binance", note: "Major global exchange; standard, well-documented affiliate program.", href: "https://accounts.binance.com/register?ref=49685937", conf: 5 },
+    { name: "Publish0x", note: "Pays real crypto tips for articles — your best content platform, too.", href: "https://www.publish0x.com/?a=OpnelZ1bKB", conf: 5 },
+    { name: "FaucetPay", note: "The micro-wallet most faucets pay into — infrastructure more than an earner.", href: "https://faucetpay.io/?r=95880", conf: 4 },
+    { name: "Cointiply", note: "Longer-running, generally well-regarded faucet and rewards site.", href: "https://cointiply.com/r/mOnqp", conf: 4 },
+    { name: "freebitco.in", note: "Long-running BTC faucet; bundles a hi-lo gambling game.", href: "https://freebitco.in/?r=17006348", conf: 4 },
+    { name: "RollerCoin", note: "Mining-simulation game; legitimate, small real payouts.", href: "https://rollercoin.com/?r=kcq1472k", conf: 4 },
+    { name: "Pawns.app", note: "Real get-paid-to app — surveys and bandwidth sharing.", href: "https://pawns.app/?r=1112465", conf: 4 },
+    { name: "EasyHits4U", note: "Traffic exchange tool, not an earner — use it to drive views to this page.", href: "https://www.easyhits4u.com/?ref=olivia965", conf: 4 },
+    { name: "Everve", note: "Second traffic exchange tool — same use case as EasyHits4U.", href: "https://everve.net/ref/678797/", conf: 3 },
+    { name: "Immutable", note: "Real, publicly-traded Web3 gaming infrastructure company.", href: "https://play.immutable.com/referral/share/8gkaZR?utm_source=referral", conf: 4 },
+    { name: "DSCVR", note: "Real Web3 social platform with past token-reward campaigns.", href: "https://dscvr.one/invite/dashboard?ur=e99a9b5f-4449-4382-943b-71579aadfa85", conf: 3 },
+    { name: "SoSoValue", note: "Legitimate crypto data and analytics platform.", href: "https://sosovalue.com/join/0DCN0PVQ", conf: 3 },
+    { name: "Blockscout", note: "Well-known block explorer.", flag: "Confirm it pays cash, not just points", href: "https://eth.blockscout.com/?ref=6RZXK3", conf: 3 },
+    { name: "EtherDROPS bot", note: "Established Telegram crypto-tracker, running since 2018.", flag: "Verify you're using the genuine bot link", href: "https://t.me/EtherDROPS_bot?start=promo_OYJAP5", conf: 4 }
+  ]},
+  { key: "small", title: "Small Faucets & PTC", note: "Real payouts, measured in cents — trust varies site to site", items: [
+    { name: "Ad.btc", note: "Pay-to-click ads; fractions of a cent per view.", href: "https://r.adbtc.top/1169353", conf: 3 },
+    { name: "CoinPayU", note: "PTC and faucet hybrid, pays out in several small cryptos.", href: "https://www.coinpayu.com/?r=dashboard", conf: 3 },
+    { name: "FireFaucet", note: "Faucet rotator and listing site.", href: "https://firefaucet.win/ref/126786", conf: 3 },
+    { name: "VieFaucet", note: "Smaller faucet, limited visibility on track record.", href: "https://viefaucet.com?r=6380ee9189dc9d60cddeaf22", conf: 2 },
+    { name: "AutoFaucet (Dutchy Corp)", note: "Long-running faucet network within this niche.", href: "https://autofaucet.dutchycorp.space/?r=Autofaucets", conf: 3 },
+    { name: "SimpleBits", note: "Smaller faucet, limited visibility on track record.", href: "https://simplebits.io/ref/0rd4li1cSLTL", conf: 2 },
+    { name: "BTCAdSpace", note: "Pay-to-click ad site.", href: "https://btcadspace.com/ref/source", conf: 2 },
+    { name: "LimerCoin", note: "Smaller faucet, limited visibility on track record.", href: "https://limercoin.com/?ref=4i6ljids", conf: 2 },
+    { name: "s.trex.xyz", note: "Shortlink and referral tool, limited visibility.", href: "https://s.trex.xyz/lltWFq", conf: 2 },
+    { name: "EarnBitMoon", note: "Faucet, PTC, and offerwall combo.", flag: "Mixed reviews — read up before relying on it", href: "https://earnbitmoon.club/?ref=265500", conf: 2 }
+  ]},
+  { key: "frontier", title: "Frontier Claims", note: "Pre-token projects — today's rewards are points, not cash", items: [
+    { name: "Neuraverse (Neura Protocol)", note: "Points and leaderboard system; pre-token.", href: "https://neuraverse.neuraprotocol.io/?section=leaderboard", conf: 2 },
+    { name: "PiggyCell", note: "Node and points project; pre-token.", href: "https://app.piggycell.io/?ref=5EOPZ8", conf: 2 },
+    { name: "LifeAI (testnet)", note: "Testnet-stage project; pre-token.", href: "https://testnet.lifeai.io/ref?code=WFNY7Z3", conf: 2 },
+    { name: "PlayAI Network", note: "Node and points project; pre-token.", href: "https://hub.playai.network/?ref=dashboard", conf: 2 },
+    { name: "OptimAI Network", note: "Confirmed tiered referral %; still pre-token \"early stage.\"", href: "https://node.optimai.network/register?ref=0EB0B06E", conf: 3 },
+    { name: "Fight.id", note: "Points and quests project; pre-token.", href: "https://app.fight.id/signup?code=FEFDB806", conf: 2 },
+    { name: "Yom", note: "Points and quests loyalty program; pre-token.", href: "https://quests.yom.net/loyalty?referral_code=I0SWSZ6V", conf: 2 },
+    { name: "Nomstead", note: "Web3 farming game; check current token status.", href: "https://nomstead.com/?ref=dhqgys6b", conf: 2 },
+    { name: "3DOS", note: "Already completed a real token airdrop distribution.", href: "https://dashboard.3dos.io/register?ref_code=6d8572", conf: 4 },
+    { name: "Codatta", note: "Has a real listed token (XNY) already trading.", href: "https://app.codatta.io/referral/a4591r", conf: 4 },
+    { name: "Aro Network", note: "Confirmed tiered referral %; VC-backed, still pre-token.", href: "https://dashboard.aro.network/signup?referral=GJIXM0", conf: 3 },
+    { name: "newshare.bwb.global", note: "Unfamiliar to me.", flag: "Unverified — check independently first", href: "https://newshare.bwb.global/en/referralLanding?inviteCode=ZnYvar&type=card", conf: 1 }
+  ]}
+];
+
+const tallyEl = document.getElementById('tally');
+const strataEl = document.getElementById('strata');
+
+DATA.forEach(group => {
+  const t = document.createElement('div');
+  t.className = 'tally-item';
+  t.innerHTML = `<span class="tally-num">${group.items.length}</span><span class="tally-label">${group.title}</span>`;
+  tallyEl.appendChild(t);
+
+  const section = document.createElement('section');
+  section.className = 'stratum';
+  section.setAttribute('data-key', group.key);
+
+  const head = document.createElement('div');
+  head.className = 'stratum-head';
+  head.innerHTML = `<span class="stratum-title">${group.title}</span><span class="stratum-note">${group.note}</span>`;
+  section.appendChild(head);
+
+  const cards = document.createElement('div');
+  cards.className = 'cards';
+
+  group.items.forEach(item => {
+    const card = document.createElement('article');
+    card.className = 'card';
+
+    const ticks = Array.from({length: 5}, (_, i) =>
+      `<span class="tick${i < item.conf ? ' on' : ''}"></span>`
+    ).join('');
+
+    card.innerHTML = `
+      <div class="card-top">
+        <span class="card-name">${item.name}</span>
+        <span class="confidence" aria-label="Confidence ${item.conf} of 5">${ticks}</span>
+      </div>
+      <p class="card-note">${item.note}</p>
+      ${item.flag ? `<span class="card-flag">${item.flag}</span>` : ''}
+      <a class="card-visit" href="${item.href}" target="_blank" rel="noopener">Visit ↗</a>
+    `;
+    cards.appendChild(card);
+  });
+
+  section.appendChild(cards);
+  strataEl.appendChild(section);
+});
+</script>
