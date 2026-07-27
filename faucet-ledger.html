@@ -1,5 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Faucet Ledger</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+html { -webkit-text-size-adjust: 100%; }
 
 .ledger-root {
   --ink: #121F1B;
@@ -229,6 +236,8 @@
 .ledger-root .stratum[data-key="small"] { --stratum-accent: var(--brass); }
 .ledger-root .stratum[data-key="frontier"] { --stratum-accent: var(--frontier); }
 </style>
+</head>
+<body>
 
 <div class="ledger-root">
   <div class="hero">
@@ -258,27 +267,27 @@ const DATA = [
     { name: "SoSoValue", note: "Legitimate crypto data and analytics platform.", href: "https://sosovalue.com/join/0DCN0PVQ", conf: 3 },
   ]},
   { key: "small", title: "Small Faucets & PTC", note: "Real payouts, measured in cents — trust varies site to site", items: [
-    { name: "Adbtc.top", note: "Pay-to-click ads; fractions of a cent per view.", href: "https://r.adbtc.top/1169353", conf: 3 },
+    { name: "Adbtc", note: "Pay-to-click ads; fractions of a cent per view.", href: "https://r.adbtc.top/1169353", conf: 3 },
     { name: "CoinPayU", note: "PTC and offerwall hybrid, pays out in several cryptos.", href: "https://www.coinpayu.com/?r=dashboard", conf: 3 },
-    { name: "FireFaucet", note: "Earnings made awesome!", href: "https://firefaucet.win/ref/126786", conf: 3 },
-    { name: "VieFaucet", note: "Consistent for those who do!", href: "https://viefaucet.com?r=6380ee9189dc9d60cddeaf22", conf: 2 },
+    { name: "FireFaucet", note: "Earnings made different!.", href: "https://firefaucet.win/ref/126786", conf: 3 },
+    { name: "VieFaucet", note: "Consistent earnings for those who do!", href: "https://viefaucet.com?r=6380ee9189dc9d60cddeaf22", conf: 2 },
     { name: "AutoFaucet (Dutchy Corp)", note: "Long-running faucet network within this niche.", href: "https://autofaucet.dutchycorp.space/?r=Autofaucets", conf: 3 },
     { name: "SimpleBits", note: "Smaller faucet, limited visibility on track record.", href: "https://simplebits.io/ref/0rd4li1cSLTL", conf: 2 },
     { name: "BTCAdSpace", note: "Pay-to-click ad site.", href: "https://btcadspace.com/ref/source", conf: 2 },
-    { name: "LimerCoin", note: "Like Rollercoin but much smaller", href: "https://limercoin.com/?ref=4i6ljids", conf: 2 },
-    { name: "EarnBitMoon", note: "Faucet, PTC, and offerwall combo.", href: "https://earnbitmoon.club/?ref=265500", conf: 2 }
+    { name: "LimerCoin", note: "Just like Rollercooin but smaller", href: "https://limercoin.com/?ref=4i6ljids", conf: 2 },
+    { name: "EarnBitMoon", note: "Faucet, PTC, and offerwall combo.",  href: "https://earnbitmoon.club/?ref=265500", conf: 2 }
   ]},
   { key: "frontier", title: "Frontier Claims", note: "Pre-token projects — today's rewards are points, not cash", items: [
     { name: "Neuraverse (Neura Protocol)", note: "Points and leaderboard system; pre-token.", href: "https://neuraverse.neuraprotocol.io/?section=leaderboard", conf: 2 },
     { name: "LifeAI (testnet)", note: "Testnet-stage project; pre-token.", href: "https://testnet.lifeai.io/ref?code=WFNY7Z3", conf: 2 },
     { name: "OptimAI Network", note: "Confirmed tiered referral %; still pre-token \"early stage.\"", href: "https://node.optimai.network/register?ref=0EB0B06E", conf: 3 },
-    { name: "Fight.id", note: "Points and quests project", href: "https://app.fight.id/signup?code=FEFDB806", conf: 2 },
-    { name: "Yom", note: "Points and quests loyalty program", href: "https://quests.yom.net/loyalty?referral_code=I0SWSZ6V", conf: 2 },
+    { name: "Fight.id", note: "Tap for 20 secs everyday!", href: "https://app.fight.id/signup?code=FEFDB806", conf: 2 },
+    { name: "Yom", note: "Points and quests loyalty program.", href: "https://quests.yom.net/loyalty?referral_code=I0SWSZ6V", conf: 2 },
     { name: "Nomstead", note: "Web3 farming game; check current token status.", href: "https://nomstead.com/?ref=dhqgys6b", conf: 2 },
     { name: "3DOS", note: "3D printing DePIN", href: "https://dashboard.3dos.io/register?ref_code=6d8572", conf: 4 },
     { name: "Codatta", note: "Has a real listed token (XNY) already trading.", href: "https://app.codatta.io/referral/a4591r", conf: 4 },
     { name: "Aro Network", note: "Confirmed tiered referral %; VC-backed, still pre-token.", href: "https://dashboard.aro.network/signup?referral=GJIXM0", conf: 3 },
-    { name: "newshare.bwb.global", note: "Bitget Wallet card with 0 fees", href: "https://newshare.bwb.global/en/referralLanding?inviteCode=ZnYvar&type=card", conf: 1 }
+    { name: "newshare.bwb.global", note: "Bitget Wallet Card", href: "https://newshare.bwb.global/en/referralLanding?inviteCode=ZnYvar&type=card", conf: 1 }
   ]}
 ];
 
@@ -327,3 +336,6 @@ DATA.forEach(group => {
   strataEl.appendChild(section);
 });
 </script>
+
+</body>
+</html>
