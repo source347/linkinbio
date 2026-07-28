@@ -97,8 +97,8 @@ html { -webkit-text-size-adjust: 100%; }
 .ledger-root .stratum {
   max-width: 1080px;
   margin: 0 auto 44px;
-  opacity: 0;
-  animation: rise 0.6s ease forwards;
+  opacity: 1;
+  animation: rise 0.6s ease both;
 }
 
 .ledger-root .stratum:nth-of-type(1) { animation-delay: 0.05s; }
@@ -188,6 +188,7 @@ html { -webkit-text-size-adjust: 100%; }
   font-size: 13px;
   color: var(--paper-dim);
   flex-grow: 1;
+  margin: 0;
 }
 
 .ledger-root .card-flag {
@@ -243,99 +244,309 @@ html { -webkit-text-size-adjust: 100%; }
   <div class="hero">
     <div class="eyebrow">Field Notes · Crypto Micro-Earning</div>
     <h1>The Faucet <em>Ledger</em></h1>
-    <p class="thesis">Thirty-six referral links, sorted honestly by how much I'd trust them — from long-running platforms to speculative pre-token bets. Sign up through any of these and I may earn a small commission, at no extra cost to you.</p>
-    <div class="tally" id="tally"></div>
+    <p class="thesis">Referral links, sorted honestly by how much I'd trust them — from long-running platforms to speculative pre-token bets. Sign up through any of these and I may earn a small commission, at no extra cost to you.</p>
+    <div class="tally">
+      <div class="tally-item"><span class="tally-num">10</span><span class="tally-label">Bedrock</span></div>
+      <div class="tally-item"><span class="tally-num">9</span><span class="tally-label">Small Earners</span></div>
+      <div class="tally-item"><span class="tally-num">10</span><span class="tally-label">Frontier Claims</span></div>
+    </div>
   </div>
-  <div id="strata"></div>
+
+  <section class="stratum" data-key="bedrock">
+    <div class="stratum-head">
+      <span class="stratum-title">Bedrock</span>
+      <span class="stratum-note">Established platforms with a real track record</span>
+    </div>
+    <div class="cards">
+
+      <article class="card">
+        <div class="card-top">
+          <span class="card-name">Binance</span>
+          <span class="confidence" aria-label="Confidence 5 of 5"><span class="tick on"></span><span class="tick on"></span><span class="tick on"></span><span class="tick on"></span><span class="tick on"></span></span>
+        </div>
+        <p class="card-note">Major global exchange; standard, well-documented affiliate program.</p>
+        <a class="card-visit" href="https://accounts.binance.com/register?ref=49685937" target="_blank" rel="noopener">Visit ↗</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="card-name">Publish0x</span>
+          <span class="confidence" aria-label="Confidence 5 of 5"><span class="tick on"></span><span class="tick on"></span><span class="tick on"></span><span class="tick on"></span><span class="tick on"></span></span>
+        </div>
+        <p class="card-note">Pays real crypto tips for articles — your best content platform, too.</p>
+        <a class="card-visit" href="https://www.publish0x.com/?a=OpnelZ1bKB" target="_blank" rel="noopener">Visit ↗</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="card-name">FaucetPay</span>
+          <span class="confidence" aria-label="Confidence 4 of 5"><span class="tick on"></span><span class="tick on"></span><span class="tick on"></span><span class="tick on"></span><span class="tick"></span></span>
+        </div>
+        <p class="card-note">The micro-wallet most faucets pay into — infrastructure more than an earner.</p>
+        <a class="card-visit" href="https://faucetpay.io/?r=95880" target="_blank" rel="noopener">Visit ↗</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="card-name">Cointiply</span>
+          <span class="confidence" aria-label="Confidence 4 of 5"><span class="tick on"></span><span class="tick on"></span><span class="tick on"></span><span class="tick on"></span><span class="tick"></span></span>
+        </div>
+        <p class="card-note">Longer-running, generally well-regarded faucet and rewards site.</p>
+        <a class="card-visit" href="https://cointiply.com/r/mOnqp" target="_blank" rel="noopener">Visit ↗</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="card-name">freebitco.in</span>
+          <span class="confidence" aria-label="Confidence 4 of 5"><span class="tick on"></span><span class="tick on"></span><span class="tick on"></span><span class="tick on"></span><span class="tick"></span></span>
+        </div>
+        <p class="card-note">Long-running BTC faucet; bundles a hi-lo gambling game.</p>
+        <a class="card-visit" href="https://freebitco.in/?r=17006348" target="_blank" rel="noopener">Visit ↗</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="card-name">RollerCoin</span>
+          <span class="confidence" aria-label="Confidence 4 of 5"><span class="tick on"></span><span class="tick on"></span><span class="tick on"></span><span class="tick on"></span><span class="tick"></span></span>
+        </div>
+        <p class="card-note">Mining-simulation game; legitimate, real payouts.</p>
+        <a class="card-visit" href="https://rollercoin.com/?r=kcq1472k" target="_blank" rel="noopener">Visit ↗</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="card-name">Pawns.app</span>
+          <span class="confidence" aria-label="Confidence 4 of 5"><span class="tick on"></span><span class="tick on"></span><span class="tick on"></span><span class="tick on"></span><span class="tick"></span></span>
+        </div>
+        <p class="card-note">Real get-paid-to app — surveys and bandwidth sharing.</p>
+        <a class="card-visit" href="https://pawns.app/?r=1112465" target="_blank" rel="noopener">Visit ↗</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="card-name">EasyHits4U</span>
+          <span class="confidence" aria-label="Confidence 4 of 5"><span class="tick on"></span><span class="tick on"></span><span class="tick on"></span><span class="tick on"></span><span class="tick"></span></span>
+        </div>
+        <p class="card-note">Traffic exchange tool, not an earner — use it to drive views to this page.</p>
+        <a class="card-visit" href="https://www.easyhits4u.com/?ref=olivia965" target="_blank" rel="noopener">Visit ↗</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="card-name">Immutable</span>
+          <span class="confidence" aria-label="Confidence 4 of 5"><span class="tick on"></span><span class="tick on"></span><span class="tick on"></span><span class="tick on"></span><span class="tick"></span></span>
+        </div>
+        <p class="card-note">Real, publicly-traded Web3 gaming infrastructure company.</p>
+        <a class="card-visit" href="https://play.immutable.com/referral/share/8gkaZR?utm_source=referral" target="_blank" rel="noopener">Visit ↗</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="card-name">SoSoValue</span>
+          <span class="confidence" aria-label="Confidence 3 of 5"><span class="tick on"></span><span class="tick on"></span><span class="tick on"></span><span class="tick"></span><span class="tick"></span></span>
+        </div>
+        <p class="card-note">Legitimate crypto data and analytics platform.</p>
+        <a class="card-visit" href="https://sosovalue.com/join/0DCN0PVQ" target="_blank" rel="noopener">Visit ↗</a>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="stratum" data-key="small">
+    <div class="stratum-head">
+      <span class="stratum-title">Small Faucets & PTC</span>
+      <span class="stratum-note">Real payouts, measured in cents — trust varies site to site</span>
+    </div>
+    <div class="cards">
+
+      <article class="card">
+        <div class="card-top">
+          <span class="card-name">Adbtc</span>
+          <span class="confidence" aria-label="Confidence 3 of 5"><span class="tick on"></span><span class="tick on"></span><span class="tick on"></span><span class="tick"></span><span class="tick"></span></span>
+        </div>
+        <p class="card-note">Pay-to-click ads; fractions of a cent per view.</p>
+        <a class="card-visit" href="https://r.adbtc.top/1169353" target="_blank" rel="noopener">Visit ↗</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="card-name">CoinPayU</span>
+          <span class="confidence" aria-label="Confidence 3 of 5"><span class="tick on"></span><span class="tick on"></span><span class="tick on"></span><span class="tick"></span><span class="tick"></span></span>
+        </div>
+        <p class="card-note">PTC and offerwall hybrid, pays out in several cryptos.</p>
+        <a class="card-visit" href="https://www.coinpayu.com/?r=dashboard" target="_blank" rel="noopener">Visit ↗</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="card-name">FireFaucet</span>
+          <span class="confidence" aria-label="Confidence 3 of 5"><span class="tick on"></span><span class="tick on"></span><span class="tick on"></span><span class="tick"></span><span class="tick"></span></span>
+        </div>
+        <p class="card-note">Earnings made different!.</p>
+        <a class="card-visit" href="https://firefaucet.win/ref/126786" target="_blank" rel="noopener">Visit ↗</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="card-name">VieFaucet</span>
+          <span class="confidence" aria-label="Confidence 2 of 5"><span class="tick on"></span><span class="tick on"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span></span>
+        </div>
+        <p class="card-note">Consistent earnings for those who do!</p>
+        <a class="card-visit" href="https://viefaucet.com?r=6380ee9189dc9d60cddeaf22" target="_blank" rel="noopener">Visit ↗</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="card-name">AutoFaucet (Dutchy Corp)</span>
+          <span class="confidence" aria-label="Confidence 3 of 5"><span class="tick on"></span><span class="tick on"></span><span class="tick on"></span><span class="tick"></span><span class="tick"></span></span>
+        </div>
+        <p class="card-note">Long-running faucet network within this niche.</p>
+        <a class="card-visit" href="https://autofaucet.dutchycorp.space/?r=Autofaucets" target="_blank" rel="noopener">Visit ↗</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="card-name">SimpleBits</span>
+          <span class="confidence" aria-label="Confidence 2 of 5"><span class="tick on"></span><span class="tick on"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span></span>
+        </div>
+        <p class="card-note">Smaller faucet, limited visibility on track record.</p>
+        <a class="card-visit" href="https://simplebits.io/ref/0rd4li1cSLTL" target="_blank" rel="noopener">Visit ↗</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="card-name">BTCAdSpace</span>
+          <span class="confidence" aria-label="Confidence 2 of 5"><span class="tick on"></span><span class="tick on"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span></span>
+        </div>
+        <p class="card-note">Pay-to-click ad site.</p>
+        <a class="card-visit" href="https://btcadspace.com/ref/source" target="_blank" rel="noopener">Visit ↗</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="card-name">LimerCoin</span>
+          <span class="confidence" aria-label="Confidence 2 of 5"><span class="tick on"></span><span class="tick on"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span></span>
+        </div>
+        <p class="card-note">Just like RollerCoin but smaller.</p>
+        <a class="card-visit" href="https://limercoin.com/?ref=4i6ljids" target="_blank" rel="noopener">Visit ↗</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="card-name">EarnBitMoon</span>
+          <span class="confidence" aria-label="Confidence 2 of 5"><span class="tick on"></span><span class="tick on"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span></span>
+        </div>
+        <p class="card-note">Faucet, PTC, and offerwall combo.</p>
+        <a class="card-visit" href="https://earnbitmoon.club/?ref=265500" target="_blank" rel="noopener">Visit ↗</a>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="stratum" data-key="frontier">
+    <div class="stratum-head">
+      <span class="stratum-title">Frontier Claims</span>
+      <span class="stratum-note">Pre-token projects — today's rewards are points, not cash</span>
+    </div>
+    <div class="cards">
+
+      <article class="card">
+        <div class="card-top">
+          <span class="card-name">Neuraverse (Neura Protocol)</span>
+          <span class="confidence" aria-label="Confidence 2 of 5"><span class="tick on"></span><span class="tick on"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span></span>
+        </div>
+        <p class="card-note">Points and leaderboard system; pre-token.</p>
+        <a class="card-visit" href="https://neuraverse.neuraprotocol.io/?section=leaderboard" target="_blank" rel="noopener">Visit ↗</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="card-name">LifeAI (testnet)</span>
+          <span class="confidence" aria-label="Confidence 2 of 5"><span class="tick on"></span><span class="tick on"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span></span>
+        </div>
+        <p class="card-note">Testnet-stage project; pre-token.</p>
+        <a class="card-visit" href="https://testnet.lifeai.io/ref?code=WFNY7Z3" target="_blank" rel="noopener">Visit ↗</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="card-name">OptimAI Network</span>
+          <span class="confidence" aria-label="Confidence 3 of 5"><span class="tick on"></span><span class="tick on"></span><span class="tick on"></span><span class="tick"></span><span class="tick"></span></span>
+        </div>
+        <p class="card-note">Confirmed tiered referral %; still pre-token "early stage."</p>
+        <a class="card-visit" href="https://node.optimai.network/register?ref=0EB0B06E" target="_blank" rel="noopener">Visit ↗</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="card-name">Fight.id</span>
+          <span class="confidence" aria-label="Confidence 2 of 5"><span class="tick on"></span><span class="tick on"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span></span>
+        </div>
+        <p class="card-note">Tap for 20 secs everyday!</p>
+        <a class="card-visit" href="https://app.fight.id/signup?code=FEFDB806" target="_blank" rel="noopener">Visit ↗</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="card-name">Yom</span>
+          <span class="confidence" aria-label="Confidence 2 of 5"><span class="tick on"></span><span class="tick on"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span></span>
+        </div>
+        <p class="card-note">Points and quests loyalty program.</p>
+        <a class="card-visit" href="https://quests.yom.net/loyalty?referral_code=I0SWSZ6V" target="_blank" rel="noopener">Visit ↗</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="card-name">Nomstead</span>
+          <span class="confidence" aria-label="Confidence 2 of 5"><span class="tick on"></span><span class="tick on"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span></span>
+        </div>
+        <p class="card-note">Web3 farming game; check current token status.</p>
+        <a class="card-visit" href="https://nomstead.com/?ref=dhqgys6b" target="_blank" rel="noopener">Visit ↗</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="card-name">3DOS</span>
+          <span class="confidence" aria-label="Confidence 4 of 5"><span class="tick on"></span><span class="tick on"></span><span class="tick on"></span><span class="tick on"></span><span class="tick"></span></span>
+        </div>
+        <p class="card-note">3D printing DePIN.</p>
+        <a class="card-visit" href="https://dashboard.3dos.io/register?ref_code=6d8572" target="_blank" rel="noopener">Visit ↗</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="card-name">Codatta</span>
+          <span class="confidence" aria-label="Confidence 4 of 5"><span class="tick on"></span><span class="tick on"></span><span class="tick on"></span><span class="tick on"></span><span class="tick"></span></span>
+        </div>
+        <p class="card-note">Has a real listed token (XNY) already trading.</p>
+        <a class="card-visit" href="https://app.codatta.io/referral/a4591r" target="_blank" rel="noopener">Visit ↗</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="card-name">Aro Network</span>
+          <span class="confidence" aria-label="Confidence 3 of 5"><span class="tick on"></span><span class="tick on"></span><span class="tick on"></span><span class="tick"></span><span class="tick"></span></span>
+        </div>
+        <p class="card-note">Confirmed tiered referral %; VC-backed, still pre-token.</p>
+        <a class="card-visit" href="https://dashboard.aro.network/signup?referral=GJIXM0" target="_blank" rel="noopener">Visit ↗</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="card-name">newshare.bwb.global</span>
+          <span class="confidence" aria-label="Confidence 1 of 5"><span class="tick on"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span></span>
+        </div>
+        <p class="card-note">Bitget Wallet Card.</p>
+        <a class="card-visit" href="https://newshare.bwb.global/en/referralLanding?inviteCode=ZnYvar&type=card" target="_blank" rel="noopener">Visit ↗</a>
+      </article>
+
+    </div>
+  </section>
+
   <footer>
     Compiled July 2026 from independent research. Confidence ticks reflect my own read on track record, not a guarantee. Do your own homework before relying on any payout — this is one person's honest notes, not financial advice.
   </footer>
 </div>
-
-<script>
-const DATA = [
-  { key: "bedrock", title: "Bedrock", note: "Established platforms with a real track record", items: [
-    { name: "Binance", note: "Major global exchange; standard, well-documented affiliate program.", href: "https://accounts.binance.com/register?ref=49685937", conf: 5 },
-    { name: "Publish0x", note: "Pays real crypto tips for articles — your best content platform, too.", href: "https://www.publish0x.com/?a=OpnelZ1bKB", conf: 5 },
-    { name: "FaucetPay", note: "The micro-wallet most faucets pay into — infrastructure more than an earner.", href: "https://faucetpay.io/?r=95880", conf: 4 },
-    { name: "Cointiply", note: "Longer-running, generally well-regarded faucet and rewards site.", href: "https://cointiply.com/r/mOnqp", conf: 4 },
-    { name: "freebitco.in", note: "Long-running BTC faucet; bundles a hi-lo gambling game.", href: "https://freebitco.in/?r=17006348", conf: 4 },
-    { name: "RollerCoin", note: "Mining-simulation game; legitimate, real payouts.", href: "https://rollercoin.com/?r=kcq1472k", conf: 4 },
-    { name: "Pawns.app", note: "Real get-paid-to app — surveys and bandwidth sharing.", href: "https://pawns.app/?r=1112465", conf: 4 },
-    { name: "EasyHits4U", note: "Traffic exchange tool, not an earner — use it to drive views to this page.", href: "https://www.easyhits4u.com/?ref=olivia965", conf: 4 },
-    { name: "Immutable", note: "Real, publicly-traded Web3 gaming infrastructure company.", href: "https://play.immutable.com/referral/share/8gkaZR?utm_source=referral", conf: 4 },
-    { name: "SoSoValue", note: "Legitimate crypto data and analytics platform.", href: "https://sosovalue.com/join/0DCN0PVQ", conf: 3 },
-  ]},
-  { key: "small", title: "Small Faucets & PTC", note: "Real payouts, measured in cents — trust varies site to site", items: [
-    { name: "Adbtc", note: "Pay-to-click ads; fractions of a cent per view.", href: "https://r.adbtc.top/1169353", conf: 3 },
-    { name: "CoinPayU", note: "PTC and offerwall hybrid, pays out in several cryptos.", href: "https://www.coinpayu.com/?r=dashboard", conf: 3 },
-    { name: "FireFaucet", note: "Earnings made different!.", href: "https://firefaucet.win/ref/126786", conf: 3 },
-    { name: "VieFaucet", note: "Consistent earnings for those who do!", href: "https://viefaucet.com?r=6380ee9189dc9d60cddeaf22", conf: 2 },
-    { name: "AutoFaucet (Dutchy Corp)", note: "Long-running faucet network within this niche.", href: "https://autofaucet.dutchycorp.space/?r=Autofaucets", conf: 3 },
-    { name: "SimpleBits", note: "Smaller faucet, limited visibility on track record.", href: "https://simplebits.io/ref/0rd4li1cSLTL", conf: 2 },
-    { name: "BTCAdSpace", note: "Pay-to-click ad site.", href: "https://btcadspace.com/ref/source", conf: 2 },
-    { name: "LimerCoin", note: "Just like Rollercooin but smaller", href: "https://limercoin.com/?ref=4i6ljids", conf: 2 },
-    { name: "EarnBitMoon", note: "Faucet, PTC, and offerwall combo.",  href: "https://earnbitmoon.club/?ref=265500", conf: 2 }
-  ]},
-  { key: "frontier", title: "Frontier Claims", note: "Pre-token projects — today's rewards are points, not cash", items: [
-    { name: "Neuraverse (Neura Protocol)", note: "Points and leaderboard system; pre-token.", href: "https://neuraverse.neuraprotocol.io/?section=leaderboard", conf: 2 },
-    { name: "LifeAI (testnet)", note: "Testnet-stage project; pre-token.", href: "https://testnet.lifeai.io/ref?code=WFNY7Z3", conf: 2 },
-    { name: "OptimAI Network", note: "Confirmed tiered referral %; still pre-token \"early stage.\"", href: "https://node.optimai.network/register?ref=0EB0B06E", conf: 3 },
-    { name: "Fight.id", note: "Tap for 20 secs everyday!", href: "https://app.fight.id/signup?code=FEFDB806", conf: 2 },
-    { name: "Yom", note: "Points and quests loyalty program.", href: "https://quests.yom.net/loyalty?referral_code=I0SWSZ6V", conf: 2 },
-    { name: "Nomstead", note: "Web3 farming game; check current token status.", href: "https://nomstead.com/?ref=dhqgys6b", conf: 2 },
-    { name: "3DOS", note: "3D printing DePIN", href: "https://dashboard.3dos.io/register?ref_code=6d8572", conf: 4 },
-    { name: "Codatta", note: "Has a real listed token (XNY) already trading.", href: "https://app.codatta.io/referral/a4591r", conf: 4 },
-    { name: "Aro Network", note: "Confirmed tiered referral %; VC-backed, still pre-token.", href: "https://dashboard.aro.network/signup?referral=GJIXM0", conf: 3 },
-    { name: "newshare.bwb.global", note: "Bitget Wallet Card", href: "https://newshare.bwb.global/en/referralLanding?inviteCode=ZnYvar&type=card", conf: 1 }
-  ]}
-];
-
-const tallyEl = document.getElementById('tally');
-const strataEl = document.getElementById('strata');
-
-DATA.forEach(group => {
-  const t = document.createElement('div');
-  t.className = 'tally-item';
-  t.innerHTML = `<span class="tally-num">${group.items.length}</span><span class="tally-label">${group.title}</span>`;
-  tallyEl.appendChild(t);
-
-  const section = document.createElement('section');
-  section.className = 'stratum';
-  section.setAttribute('data-key', group.key);
-
-  const head = document.createElement('div');
-  head.className = 'stratum-head';
-  head.innerHTML = `<span class="stratum-title">${group.title}</span><span class="stratum-note">${group.note}</span>`;
-  section.appendChild(head);
-
-  const cards = document.createElement('div');
-  cards.className = 'cards';
-
-  group.items.forEach(item => {
-    const card = document.createElement('article');
-    card.className = 'card';
-
-    const ticks = Array.from({length: 5}, (_, i) =>
-      `<span class="tick${i < item.conf ? ' on' : ''}"></span>`
-    ).join('');
-
-    card.innerHTML = `
-      <div class="card-top">
-        <span class="card-name">${item.name}</span>
-        <span class="confidence" aria-label="Confidence ${item.conf} of 5">${ticks}</span>
-      </div>
-      <p class="card-note">${item.note}</p>
-      ${item.flag ? `<span class="card-flag">${item.flag}</span>` : ''}
-      <a class="card-visit" href="${item.href}" target="_blank" rel="noopener">Visit ↗</a>
-    `;
-    cards.appendChild(card);
-  });
-
-  section.appendChild(cards);
-  strataEl.appendChild(section);
-});
-</script>
 
 </body>
 </html>
